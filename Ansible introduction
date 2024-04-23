@@ -1,0 +1,25 @@
+Playbook is written in YAML language and it should be in below format
+
+Name
+Hosts
+Tasks
+   - name: name of the task
+      Module name
+        -argument 
+
+Ex: You want to create an user
+
+Adhoc method : ansible <hostname/IP> -m user -a 'name=shrey state=present'
+
+Syntax check
+
+ansible-playbook useradd.yaml --syntax-check
+
+---
+- name: add new user
+  hosts: IP
+  tasks:
+   - name: adding new user ishu
+     user:
+      name: ishu
+      state: present
